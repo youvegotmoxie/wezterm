@@ -37,7 +37,8 @@ tabline.setup({
 	},
 	sections = {
 		tabline_a = { "" },
-		tabline_y = { "datetime" },
+		tabline_x = { "ram", "cpu", throttle = 5 },
+		tabline_y = { "datetime", "battery" },
 		tabline_z = { "" },
 	},
 })
@@ -45,31 +46,11 @@ tabline.setup({
 -- Configure keymaps
 local act = wezterm.action
 config.keys = {
-	{
-		key = "d",
-		mods = "CMD|SHIFT",
-		action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
-	},
-	{
-		key = "d",
-		mods = "CMD",
-		action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
-	},
-	{
-		key = "Enter",
-		mods = "CMD|SHIFT",
-		action = act.TogglePaneZoomState,
-	},
-	{
-		key = "[",
-		mods = "CMD",
-		action = act.ActivatePaneDirection("Up"),
-	},
-	{
-		key = "]",
-		mods = "CMD",
-		action = act.ActivatePaneDirection("Down"),
-	},
+	{ key = "d", mods = "CMD|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ key = "d", mods = "CMD", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "Enter", mods = "CMD|SHIFT", action = act.TogglePaneZoomState },
+	{ key = "[", mods = "CMD", action = act.ActivatePaneDirection("Up") },
+	{ key = "]", mods = "CMD", action = act.ActivatePaneDirection("Down") },
 }
 
 -- and finally, return the configuration to wezterm
