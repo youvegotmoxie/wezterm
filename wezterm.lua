@@ -51,6 +51,8 @@ config.keys = {
 	{ key = "Enter", mods = "CMD|SHIFT", action = act.TogglePaneZoomState },
 	{ key = "[", mods = "CMD", action = act.ActivatePaneDirection("Up") },
 	{ key = "]", mods = "CMD", action = act.ActivatePaneDirection("Down") },
+	{ key = "UpArrow", mods = "CMD|SHIFT", action = act.ScrollToPrompt(-1) },
+	{ key = "DownArrow", mods = "CMD|SHIFT", action = act.ScrollToPrompt(1) },
 }
 
 -- and finally, return the configuration to wezterm
